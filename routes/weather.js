@@ -4,7 +4,6 @@ var router = express.Router();
 const fetch = require('node-fetch');
 const City = require('../models/cities');
 
-
 router.post('/', (req, res) => {
 	// Check if the city has not already been added
 	City.findOne({ cityName: { $regex: new RegExp(req.body.cityName, 'i') } }).then(dbData => {
